@@ -1,0 +1,48 @@
+#formSuccessPopup {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+#formSuccessPopup.active {
+    display: flex;
+}
+
+.popup-box {
+    background: #111;
+    padding: 30px 40px;
+    border-radius: 12px;
+    text-align: center;
+    animation: popupScale 0.3s ease;
+}
+
+.popup-box i {
+    font-size: 48px;
+    color: #00ff9c;
+    margin-bottom: 10px;
+}
+
+.popup-box h3 {
+    color: #fff;
+    margin-bottom: 6px;
+}
+
+.popup-box p {
+    color: #aaa;
+    font-size: 14px;
+}
+
+@keyframes popupScale {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
