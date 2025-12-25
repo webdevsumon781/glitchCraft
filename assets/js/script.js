@@ -259,7 +259,39 @@ document.querySelectorAll(".funfacts-box").forEach(function (box) {
 
 
 // contact form start
-document.getElementById("contactForm").addEventListener("submit", function(e) {
+// document.getElementById("contactForm").addEventListener("submit", function(e) {
+//   e.preventDefault();
+
+//   const submitBtn = document.getElementById("contact-submit");
+//   submitBtn.disabled = true;
+//   submitBtn.innerText = "Sending...";
+
+//   emailjs.sendForm('service_u520qxp', 'template_tpzwrdm', this)
+//     .then(() => {
+//       alert("✅ Message sent successfully!");
+//       this.reset();
+//       submitBtn.disabled = false;
+//       submitBtn.innerText = "Send Message";
+//     }, (error) => {
+//       console.error(error);
+//       alert("❌ Failed to send message. Try again later.");
+//       submitBtn.disabled = false;
+//       submitBtn.innerText = "Send Message";
+//     });
+// });
+
+const successPopup = document.getElementById("formSuccessPopup");
+
+// Click anywhere on popup to hide it
+successPopup.addEventListener("click", () => {
+  successPopup.classList.remove("show");
+  // wait for transition to finish, then hide completely
+  setTimeout(() => {
+    successPopup.style.display = "none";
+  }, 400); // same as transition
+});
+
+document.getElementById("contactForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
   const submitBtn = document.getElementById("contact-submit");
@@ -268,7 +300,13 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
 
   emailjs.sendForm('service_u520qxp', 'template_tpzwrdm', this)
     .then(() => {
-      alert("✅ Message sent successfully!");
+      // Show popup
+      successPopup.style.display = "flex"; // reset display
+      // allow CSS transition to trigger
+      setTimeout(() => {
+        successPopup.classList.add("show");
+      }, 10); // tiny delay to allow browser to register display change
+
       this.reset();
       submitBtn.disabled = false;
       submitBtn.innerText = "Send Message";
@@ -279,6 +317,4 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
       submitBtn.innerText = "Send Message";
     });
 });
-
-
 // contact form close

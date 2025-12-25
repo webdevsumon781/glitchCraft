@@ -1,16 +1,38 @@
+
+
+/* Basic styling for the popup */
 #formSuccessPopup {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.6);
     display: none;
+    /* hidden by default */
     align-items: center;
     justify-content: center;
     z-index: 9999;
+    position: fixed;
+    inset: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    /* zoom + fade */
+    z-index: 9999;
+    cursor: pointer;
+    /* user can click to close */
 }
 
-#formSuccessPopup.active {
+#formSuccessPopup.show {
     display: flex;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    width: 100vw;
+    height: 100vh;
 }
+
 
 .popup-box {
     background: #111;
@@ -41,6 +63,7 @@
         transform: scale(0.8);
         opacity: 0;
     }
+
     to {
         transform: scale(1);
         opacity: 1;
