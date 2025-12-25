@@ -1108,30 +1108,33 @@
                 <div class="row">
                   <!-- Contact form -->
                   <div class="col-lg-7 col-12 ">
-                    <form action="https://formsubmit.co/webdevsumon781@gmail.com" method="POST"
-                      class="contact-form animate__animated animate__fadeInLeft animate__delay-2s" id="contactForm">
+                    <form id="contactForm" class="contact-form animate__animated animate__fadeInLeft animate__delay-2s">
                       <h4 class="content-title">contact me</h4>
                       <div class="row">
-
-                        <!-- FormSubmit settings -->
-                        <input type="hidden" name="_honey" style="display:none">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_subject" value="New Message from Portfolio">
-                        <input type="hidden" name="_template" value="table">
-
-                        <div class="col-12 col-md-6 form-group"><input class="form-control" id="contact-name"
-                            type="text" name="name" placeholder="Name" required=""></div>
-                        <div class="col-12 col-md-6 form-group"><input class="form-control" id="contact-email"
-                            type="email" name="email" placeholder="Email" required=""></div>
-                        <div class="col-12 form-group"><input class="form-control" id="contact-subject" type="text"
-                            name="subject" placeholder="Subject" required=""></div>
-                        <div class="col-12 form-group form-message"><textarea class="form-control" id="contact-message"
-                            name="message" placeholder="Message" rows="5" required=""></textarea></div>
-                        <div class="col-12 mb-4 form-submit"><button class="clickbtn button-main button-scheme"
-                            id="contact-submit" type="submit">Send Message</button>
+                        <div class="col-12 col-md-6 form-group">
+                          <input class="form-control" id="contact-name" type="text" name="name" placeholder="Name"
+                            required>
+                        </div>
+                        <div class="col-12 col-md-6 form-group">
+                          <input class="form-control" id="contact-email" type="email" name="email" placeholder="Email"
+                            required>
+                        </div>
+                        <div class="col-12 form-group">
+                          <input class="form-control" id="contact-subject" type="text" name="subject"
+                            placeholder="Subject" required>
+                        </div>
+                        <div class="col-12 form-group form-message">
+                          <textarea class="form-control" id="contact-message" name="message" placeholder="Message"
+                            rows="5" required></textarea>
+                        </div>
+                        <div class="col-12 mb-4 form-submit">
+                          <button class="clickbtn button-main button-scheme" id="contact-submit" type="submit">Send
+                            Message</button>
                         </div>
                       </div>
                     </form>
+
+
                   </div>
                   <!-- Contact form End -->
 
@@ -1291,6 +1294,14 @@
   <script src="assets/js/style.switch.js"></script>
   <!-- colors JS -->
   <script src="assets/js/color.js"></script>
+
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function () {
+      emailjs.init("SMPqGnBgQeO9umQC_");
+    })();
+  </script>
+
 
 </body>
 

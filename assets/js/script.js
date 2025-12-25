@@ -259,34 +259,26 @@ document.querySelectorAll(".funfacts-box").forEach(function (box) {
 
 
 // contact form start
-const form = document.getElementById("contactForm");
-const popup = document.getElementById("formSuccessPopup");
-
-form.addEventListener("submit", function (e) {
+document.getElementById("contactForm").addEventListener("submit", function(e) {
   e.preventDefault();
 
-  const formData = new FormData(form);
+  const submitBtn = document.getElementById("contact-submit");
+  submitBtn.disabled = true;
+  submitBtn.innerText = "Sending...";
 
-  fetch("https://formsubmit.co/ajax/webdevsumon781@gmail.com", {
-    method: "POST",
-    headers: {
-      "Accept": "application/json"
-    },
-    body: formData
-  })
-    .then(response => response.json())
-    .then(data => {
-      if (data.success === "true") {
-        form.reset();
-        popup.classList.add("active");
-
-        setTimeout(() => {
-          popup.classList.remove("active");
-        }, 3000);
-      }
-    })
-    .catch(() => {
-      alert("Something went wrong. Please try again.");
+  emailjs.sendForm('service_u520qxp', 'template_tpzwrdm', this)
+    .then(() => {
+      alert("✅ Message sent successfully!");
+      this.reset();
+      submitBtn.disabled = false;
+      submitBtn.innerText = "Send Message";
+    }, (error) => {
+      console.error(error);
+      alert("❌ Failed to send message. Try again later.");
+      submitBtn.disabled = false;
+      submitBtn.innerText = "Send Message";
     });
 });
+
+
 // contact form close
