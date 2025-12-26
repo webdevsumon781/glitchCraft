@@ -207,6 +207,7 @@ if (window.jQuery && jQuery.fn.fancybox) {
   });
 }
 
+
 /* ===============================
    TESTIMONIAL CAROUSEL
 =============================== */
@@ -259,26 +260,7 @@ document.querySelectorAll(".funfacts-box").forEach(function (box) {
 
 
 // contact form start
-// document.getElementById("contactForm").addEventListener("submit", function(e) {
-//   e.preventDefault();
 
-//   const submitBtn = document.getElementById("contact-submit");
-//   submitBtn.disabled = true;
-//   submitBtn.innerText = "Sending...";
-
-//   emailjs.sendForm('service_u520qxp', 'template_tpzwrdm', this)
-//     .then(() => {
-//       alert("✅ Message sent successfully!");
-//       this.reset();
-//       submitBtn.disabled = false;
-//       submitBtn.innerText = "Send Message";
-//     }, (error) => {
-//       console.error(error);
-//       alert("❌ Failed to send message. Try again later.");
-//       submitBtn.disabled = false;
-//       submitBtn.innerText = "Send Message";
-//     });
-// });
 
 const successPopup = document.getElementById("formSuccessPopup");
 

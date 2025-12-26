@@ -1,0 +1,109 @@
+
+.bar .progress-line.Photoshop span {
+    width: 70%
+}
+
+.bar .progress-line.Illustrator span {
+    width: 90%
+}
+
+.bar .progress-line.Figma span {
+    width: 75%
+}
+
+.bar .progress-line.XD span {
+    width: 80%
+}
+
+.bar .progress-line.Sketch span {
+    width: 70%
+}
+
+.bar .progress-line.html span {
+    width: 80%
+}
+
+.bar .progress-line.css span {
+    width: 60%
+}
+
+.bar .progress-line.jquery span {
+    width: 85%
+}
+
+.bar .progress-line.python span {
+    width: 50%
+}
+
+.bar .progress-line.mysql span {
+    width: 70%
+}
+
+.progress-line span::before {
+    position: absolute;
+    content: "";
+    top: -10px;
+    right: 0;
+    height: 0;
+    width: 0;
+    border: 7px solid transparent;
+    border-bottom-width: 0;
+    border-right-width: 0;
+    border-top-color: #fff;
+    opacity: 0;
+    animation: showText2 1s 3s linear forwards
+}
+
+.progress-line span::after {
+    position: absolute;
+    top: -28px;
+    right: 0;
+    font-weight: 500;
+    background: #fdfdfd;
+    color: #ff651c;
+    padding: 1px 8px;
+    font-size: 12px;
+    border-radius: 3px;
+    opacity: 0;
+    animation: showText2 1s 3s linear forwards
+}
+
+.progress-line.Photoshop span::after {
+    content: "70%"
+}
+
+.progress-line.Illustrator span::after {
+    content: "90%"
+}
+
+.progress-line.Figma span::after {
+    content: "75%"
+}
+
+.progress-line.XD span::after {
+    content: "80%"
+}
+
+.progress-line.Sketch span::after {
+    content: "70%"
+}
+
+.progress-line.html span::after {
+    content: "80%"
+}
+
+.progress-line.css span::after {
+    content: "60%"
+}
+
+.progress-line.jquery span::after {
+    content: "85%"
+}
+
+.progress-line.python span::after {
+    content: "50%"
+}
+
+.progress-line.mysql span::after {
+    content: "70%"
+}
